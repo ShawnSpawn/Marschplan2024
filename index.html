@@ -44,15 +44,15 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/MarschwegDi_2.js"></script>
-        <script src="data/MarschwegMo_3.js"></script>
-        <script src="data/MarschwegSo_4.js"></script>
-        <script src="data/MarschwegSa_5.js"></script>
-        <script src="data/Hptelenker_6.js"></script>
-        <script src="data/Dienstag_7.js"></script>
-        <script src="data/Montag_8.js"></script>
-        <script src="data/Sonntag_9.js"></script>
-        <script src="data/Samstag_10.js"></script>
+        <script src="data/Hptelenker_2.js"></script>
+        <script src="data/Marschweg_3.js"></script>
+        <script src="data/Antreten_4.js"></script>
+        <script src="data/Marschweg_5.js"></script>
+        <script src="data/Antreten_6.js"></script>
+        <script src="data/Marschweg_7.js"></script>
+        <script src="data/Antreten_8.js"></script>
+        <script src="data/Marschweg_9.js"></script>
+        <script src="data/Antreten_10.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -72,7 +72,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[51.15115017077323,6.709374479114848],[51.16591089442383,6.746505335068201]]);
+        }).fitBounds([[51.153500418895995,6.713376536152769],[51.16825995209119,6.750508186110403]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -160,242 +160,7 @@
             attribution: '',
         });
         map.addLayer(layer_Hintergrundgrau_1);
-        function pop_MarschwegDi_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_MarschwegDi_2_0() {
-            return {
-                pane: 'pane_MarschwegDi_2',
-                opacity: 1,
-                color: 'rgba(238,229,55,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 5.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_MarschwegDi_2');
-        map.getPane('pane_MarschwegDi_2').style.zIndex = 402;
-        map.getPane('pane_MarschwegDi_2').style['mix-blend-mode'] = 'normal';
-        var layer_MarschwegDi_2 = new L.geoJson(json_MarschwegDi_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MarschwegDi_2',
-            layerName: 'layer_MarschwegDi_2',
-            pane: 'pane_MarschwegDi_2',
-            onEachFeature: pop_MarschwegDi_2,
-            style: style_MarschwegDi_2_0,
-        });
-        bounds_group.addLayer(layer_MarschwegDi_2);
-        function pop_MarschwegMo_3(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_MarschwegMo_3_0() {
-            return {
-                pane: 'pane_MarschwegMo_3',
-                opacity: 1,
-                color: 'rgba(193,27,37,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 5.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_MarschwegMo_3');
-        map.getPane('pane_MarschwegMo_3').style.zIndex = 403;
-        map.getPane('pane_MarschwegMo_3').style['mix-blend-mode'] = 'normal';
-        var layer_MarschwegMo_3 = new L.geoJson(json_MarschwegMo_3, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MarschwegMo_3',
-            layerName: 'layer_MarschwegMo_3',
-            pane: 'pane_MarschwegMo_3',
-            onEachFeature: pop_MarschwegMo_3,
-            style: style_MarschwegMo_3_0,
-        });
-        bounds_group.addLayer(layer_MarschwegMo_3);
-        function pop_MarschwegSo_4(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Name</th>\
-                        <td class="visible-with-data" id="Name">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_MarschwegSo_4_0() {
-            return {
-                pane: 'pane_MarschwegSo_4',
-                opacity: 1,
-                color: 'rgba(80,168,71,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 5.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_MarschwegSo_4');
-        map.getPane('pane_MarschwegSo_4').style.zIndex = 404;
-        map.getPane('pane_MarschwegSo_4').style['mix-blend-mode'] = 'normal';
-        var layer_MarschwegSo_4 = new L.geoJson(json_MarschwegSo_4, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MarschwegSo_4',
-            layerName: 'layer_MarschwegSo_4',
-            pane: 'pane_MarschwegSo_4',
-            onEachFeature: pop_MarschwegSo_4,
-            style: style_MarschwegSo_4_0,
-        });
-        bounds_group.addLayer(layer_MarschwegSo_4);
-        function pop_MarschwegSa_5(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_MarschwegSa_5_0() {
-            return {
-                pane: 'pane_MarschwegSa_5',
-                opacity: 1,
-                color: 'rgba(72,123,182,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 5.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_MarschwegSa_5');
-        map.getPane('pane_MarschwegSa_5').style.zIndex = 405;
-        map.getPane('pane_MarschwegSa_5').style['mix-blend-mode'] = 'normal';
-        var layer_MarschwegSa_5 = new L.geoJson(json_MarschwegSa_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MarschwegSa_5',
-            layerName: 'layer_MarschwegSa_5',
-            pane: 'pane_MarschwegSa_5',
-            onEachFeature: pop_MarschwegSa_5,
-            style: style_MarschwegSa_5_0,
-        });
-        bounds_group.addLayer(layer_MarschwegSa_5);
-        map.addLayer(layer_MarschwegSa_5);
-        function pop_Hptelenker_6(feature, layer) {
+        function pop_Hptelenker_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -433,11 +198,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Hptelenker_6_0(feature) {
+        function style_Hptelenker_2_0(feature) {
             switch(String(feature.properties['Name'])) {
                 case 'Björn':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -453,7 +218,7 @@
                     break;
                 case 'Bömski':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -469,7 +234,7 @@
                     break;
                 case 'Dirk':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -485,7 +250,7 @@
                     break;
                 case 'Hanni':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -501,7 +266,7 @@
                     break;
                 case 'Haufen':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -517,7 +282,7 @@
                     break;
                 case 'Horno':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -533,7 +298,7 @@
                     break;
                 case 'Lexi':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -549,7 +314,7 @@
                     break;
                 case 'N.':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -565,7 +330,7 @@
                     break;
                 case 'Nobbi':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -581,7 +346,7 @@
                     break;
                 case 'Püllemann':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -597,7 +362,7 @@
                     break;
                 case 'Rüdi':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -613,7 +378,7 @@
                     break;
                 case 'Schnubi':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -629,7 +394,7 @@
                     break;
                 case 'Schorsch':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -645,7 +410,7 @@
                     break;
                 case 'Timm':
                     return {
-                pane: 'pane_Hptelenker_6',
+                pane: 'pane_Hptelenker_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -661,27 +426,84 @@
                     break;
             }
         }
-        map.createPane('pane_Hptelenker_6');
-        map.getPane('pane_Hptelenker_6').style.zIndex = 406;
-        map.getPane('pane_Hptelenker_6').style['mix-blend-mode'] = 'normal';
-        var layer_Hptelenker_6 = new L.geoJson(json_Hptelenker_6, {
+        map.createPane('pane_Hptelenker_2');
+        map.getPane('pane_Hptelenker_2').style.zIndex = 402;
+        map.getPane('pane_Hptelenker_2').style['mix-blend-mode'] = 'normal';
+        var layer_Hptelenker_2 = new L.geoJson(json_Hptelenker_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Hptelenker_6',
-            layerName: 'layer_Hptelenker_6',
-            pane: 'pane_Hptelenker_6',
-            onEachFeature: pop_Hptelenker_6,
+            dataVar: 'json_Hptelenker_2',
+            layerName: 'layer_Hptelenker_2',
+            pane: 'pane_Hptelenker_2',
+            onEachFeature: pop_Hptelenker_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Hptelenker_6_0(feature));
+                return L.circleMarker(latlng, style_Hptelenker_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Hptelenker_6);
-        map.addLayer(layer_Hptelenker_6);
-        function pop_Dienstag_7(feature, layer) {
+        bounds_group.addLayer(layer_Hptelenker_2);
+        map.addLayer(layer_Hptelenker_2);
+        function pop_Marschweg_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Marschweg_3_0() {
+            return {
+                pane: 'pane_Marschweg_3',
+                opacity: 1,
+                color: 'rgba(238,229,55,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Marschweg_3');
+        map.getPane('pane_Marschweg_3').style.zIndex = 403;
+        map.getPane('pane_Marschweg_3').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_3 = new L.geoJson(json_Marschweg_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Marschweg_3',
+            layerName: 'layer_Marschweg_3',
+            pane: 'pane_Marschweg_3',
+            onEachFeature: pop_Marschweg_3,
+            style: style_Marschweg_3_0,
+        });
+        bounds_group.addLayer(layer_Marschweg_3);
+        function pop_Antreten_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -723,9 +545,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Dienstag_7_0() {
+        function style_Antreten_4_0() {
             return {
-                pane: 'pane_Dienstag_7',
+                pane: 'pane_Antreten_4',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -740,30 +562,87 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Dienstag_7');
-        map.getPane('pane_Dienstag_7').style.zIndex = 407;
-        map.getPane('pane_Dienstag_7').style['mix-blend-mode'] = 'normal';
-        var layer_Dienstag_7 = new L.geoJson(json_Dienstag_7, {
+        map.createPane('pane_Antreten_4');
+        map.getPane('pane_Antreten_4').style.zIndex = 404;
+        map.getPane('pane_Antreten_4').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_4 = new L.geoJson(json_Antreten_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Dienstag_7',
-            layerName: 'layer_Dienstag_7',
-            pane: 'pane_Dienstag_7',
-            onEachFeature: pop_Dienstag_7,
+            dataVar: 'json_Antreten_4',
+            layerName: 'layer_Antreten_4',
+            pane: 'pane_Antreten_4',
+            onEachFeature: pop_Antreten_4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Dienstag_7_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_4_0(feature));
             },
         });
-        var cluster_Dienstag_7 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_4 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Dienstag_7.addLayer(layer_Dienstag_7);
+        cluster_Antreten_4.addLayer(layer_Antreten_4);
 
-        bounds_group.addLayer(layer_Dienstag_7);
-        function pop_Montag_8(feature, layer) {
+        bounds_group.addLayer(layer_Antreten_4);
+        function pop_Marschweg_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Marschweg_5_0() {
+            return {
+                pane: 'pane_Marschweg_5',
+                opacity: 1,
+                color: 'rgba(193,27,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Marschweg_5');
+        map.getPane('pane_Marschweg_5').style.zIndex = 405;
+        map.getPane('pane_Marschweg_5').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_5 = new L.geoJson(json_Marschweg_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Marschweg_5',
+            layerName: 'layer_Marschweg_5',
+            pane: 'pane_Marschweg_5',
+            onEachFeature: pop_Marschweg_5,
+            style: style_Marschweg_5_0,
+        });
+        bounds_group.addLayer(layer_Marschweg_5);
+        function pop_Antreten_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -806,9 +685,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Montag_8_0() {
+        function style_Antreten_6_0() {
             return {
-                pane: 'pane_Montag_8',
+                pane: 'pane_Antreten_6',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -823,30 +702,90 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Montag_8');
-        map.getPane('pane_Montag_8').style.zIndex = 408;
-        map.getPane('pane_Montag_8').style['mix-blend-mode'] = 'normal';
-        var layer_Montag_8 = new L.geoJson(json_Montag_8, {
+        map.createPane('pane_Antreten_6');
+        map.getPane('pane_Antreten_6').style.zIndex = 406;
+        map.getPane('pane_Antreten_6').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_6 = new L.geoJson(json_Antreten_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Montag_8',
-            layerName: 'layer_Montag_8',
-            pane: 'pane_Montag_8',
-            onEachFeature: pop_Montag_8,
+            dataVar: 'json_Antreten_6',
+            layerName: 'layer_Antreten_6',
+            pane: 'pane_Antreten_6',
+            onEachFeature: pop_Antreten_6,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Montag_8_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_6_0(feature));
             },
         });
-        var cluster_Montag_8 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_6 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Montag_8.addLayer(layer_Montag_8);
+        cluster_Antreten_6.addLayer(layer_Antreten_6);
 
-        bounds_group.addLayer(layer_Montag_8);
-        function pop_Sonntag_9(feature, layer) {
+        bounds_group.addLayer(layer_Antreten_6);
+        function pop_Marschweg_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td class="visible-with-data" id="Name">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Marschweg_7_0() {
+            return {
+                pane: 'pane_Marschweg_7',
+                opacity: 1,
+                color: 'rgba(80,168,71,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Marschweg_7');
+        map.getPane('pane_Marschweg_7').style.zIndex = 407;
+        map.getPane('pane_Marschweg_7').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_7 = new L.geoJson(json_Marschweg_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Marschweg_7',
+            layerName: 'layer_Marschweg_7',
+            pane: 'pane_Marschweg_7',
+            onEachFeature: pop_Marschweg_7,
+            style: style_Marschweg_7_0,
+        });
+        bounds_group.addLayer(layer_Marschweg_7);
+        function pop_Antreten_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -889,9 +828,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Sonntag_9_0() {
+        function style_Antreten_8_0() {
             return {
-                pane: 'pane_Sonntag_9',
+                pane: 'pane_Antreten_8',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -906,30 +845,91 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Sonntag_9');
-        map.getPane('pane_Sonntag_9').style.zIndex = 409;
-        map.getPane('pane_Sonntag_9').style['mix-blend-mode'] = 'normal';
-        var layer_Sonntag_9 = new L.geoJson(json_Sonntag_9, {
+        map.createPane('pane_Antreten_8');
+        map.getPane('pane_Antreten_8').style.zIndex = 408;
+        map.getPane('pane_Antreten_8').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_8 = new L.geoJson(json_Antreten_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Sonntag_9',
-            layerName: 'layer_Sonntag_9',
-            pane: 'pane_Sonntag_9',
-            onEachFeature: pop_Sonntag_9,
+            dataVar: 'json_Antreten_8',
+            layerName: 'layer_Antreten_8',
+            pane: 'pane_Antreten_8',
+            onEachFeature: pop_Antreten_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Sonntag_9_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_8_0(feature));
             },
         });
-        var cluster_Sonntag_9 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_8 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Sonntag_9.addLayer(layer_Sonntag_9);
+        cluster_Antreten_8.addLayer(layer_Antreten_8);
 
-        bounds_group.addLayer(layer_Sonntag_9);
-        function pop_Samstag_10(feature, layer) {
+        bounds_group.addLayer(layer_Antreten_8);
+        function pop_Marschweg_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Marschweg_9_0() {
+            return {
+                pane: 'pane_Marschweg_9',
+                opacity: 1,
+                color: 'rgba(72,123,182,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Marschweg_9');
+        map.getPane('pane_Marschweg_9').style.zIndex = 409;
+        map.getPane('pane_Marschweg_9').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_9 = new L.geoJson(json_Marschweg_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Marschweg_9',
+            layerName: 'layer_Marschweg_9',
+            pane: 'pane_Marschweg_9',
+            onEachFeature: pop_Marschweg_9,
+            style: style_Marschweg_9_0,
+        });
+        bounds_group.addLayer(layer_Marschweg_9);
+        map.addLayer(layer_Marschweg_9);
+        function pop_Antreten_10(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -972,9 +972,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Samstag_10_0() {
+        function style_Antreten_10_0() {
             return {
-                pane: 'pane_Samstag_10',
+                pane: 'pane_Antreten_10',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -989,30 +989,30 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Samstag_10');
-        map.getPane('pane_Samstag_10').style.zIndex = 410;
-        map.getPane('pane_Samstag_10').style['mix-blend-mode'] = 'normal';
-        var layer_Samstag_10 = new L.geoJson(json_Samstag_10, {
+        map.createPane('pane_Antreten_10');
+        map.getPane('pane_Antreten_10').style.zIndex = 410;
+        map.getPane('pane_Antreten_10').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_10 = new L.geoJson(json_Antreten_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Samstag_10',
-            layerName: 'layer_Samstag_10',
-            pane: 'pane_Samstag_10',
-            onEachFeature: pop_Samstag_10,
+            dataVar: 'json_Antreten_10',
+            layerName: 'layer_Antreten_10',
+            pane: 'pane_Antreten_10',
+            onEachFeature: pop_Antreten_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Samstag_10_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_10_0(feature));
             },
         });
-        var cluster_Samstag_10 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_10 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Samstag_10.addLayer(layer_Samstag_10);
+        cluster_Antreten_10.addLayer(layer_Antreten_10);
 
-        bounds_group.addLayer(layer_Samstag_10);
-        cluster_Samstag_10.addTo(map);
+        bounds_group.addLayer(layer_Antreten_10);
+        cluster_Antreten_10.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1025,15 +1025,19 @@
         .title += 'Search for a place';
         var baseMaps = {};
         var overlaysTree = [
-            {label: '<img src="legend/Samstag_10.png" /> Samstag', layer: cluster_Samstag_10},
-            {label: '<img src="legend/Sonntag_9.png" /> Sonntag', layer: cluster_Sonntag_9},
-            {label: '<img src="legend/Montag_8.png" /> Montag', layer: cluster_Montag_8},
-            {label: '<img src="legend/Dienstag_7.png" /> Dienstag', layer: cluster_Dienstag_7},
-            {label: 'Höptelenker<br /><table><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Björn0.png" /></td><td>Björn</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Bömski1.png" /></td><td>Bömski</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Dirk2.png" /></td><td>Dirk</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Hanni3.png" /></td><td>Hanni</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Haufen4.png" /></td><td>Haufen</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Horno5.png" /></td><td>Horno</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Lexi6.png" /></td><td>Lexi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_N7.png" /></td><td>N.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Nobbi8.png" /></td><td>Nobbi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Püllemann9.png" /></td><td>Püllemann</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Rüdi10.png" /></td><td>Rüdi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Schnubi11.png" /></td><td>Schnubi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Schorsch12.png" /></td><td>Schorsch</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_6_Timm13.png" /></td><td>Timm</td></tr></table>', layer: layer_Hptelenker_6},
-            {label: '<img src="legend/MarschwegSa_5.png" /> Marschweg Sa', layer: layer_MarschwegSa_5},
-            {label: '<img src="legend/MarschwegSo_4.png" /> Marschweg So', layer: layer_MarschwegSo_4},
-            {label: '<img src="legend/MarschwegMo_3.png" /> Marschweg Mo', layer: layer_MarschwegMo_3},
-            {label: '<img src="legend/MarschwegDi_2.png" /> Marschweg Di', layer: layer_MarschwegDi_2},
+        {label: '<b>Samstag</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/Antreten_10.png" /> Antreten', layer: cluster_Antreten_10},
+            {label: '<img src="legend/Marschweg_9.png" /> Marschweg', layer: layer_Marschweg_9},]},
+        {label: '<b>Sonntag</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/Antreten_8.png" /> Antreten', layer: cluster_Antreten_8},
+            {label: '<img src="legend/Marschweg_7.png" /> Marschweg', layer: layer_Marschweg_7},]},
+        {label: '<b>Montag</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/Antreten_6.png" /> Antreten', layer: cluster_Antreten_6},
+            {label: '<img src="legend/Marschweg_5.png" /> Marschweg', layer: layer_Marschweg_5},]},
+        {label: '<b>Dienstag</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/Antreten_4.png" /> Antreten', layer: cluster_Antreten_4},
+            {label: '<img src="legend/Marschweg_3.png" /> Marschweg', layer: layer_Marschweg_3},]},
+            {label: 'Höptelenker<br /><table><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Björn0.png" /></td><td>Björn</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Bömski1.png" /></td><td>Bömski</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Dirk2.png" /></td><td>Dirk</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Hanni3.png" /></td><td>Hanni</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Haufen4.png" /></td><td>Haufen</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Horno5.png" /></td><td>Horno</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Lexi6.png" /></td><td>Lexi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_N7.png" /></td><td>N.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Nobbi8.png" /></td><td>Nobbi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Püllemann9.png" /></td><td>Püllemann</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Rüdi10.png" /></td><td>Rüdi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schnubi11.png" /></td><td>Schnubi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schorsch12.png" /></td><td>Schorsch</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Timm13.png" /></td><td>Timm</td></tr></table>', layer: layer_Hptelenker_2},
             {label: "Hintergrund grau", layer: layer_Hintergrundgrau_1},
             {label: "Hintergrund farbig", layer: layer_Hintergrundfarbig_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
@@ -1048,12 +1052,12 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_Hptelenker_6.eachLayer(function(layer) {
+        layer_Hptelenker_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Hptelenker_6'});
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Hptelenker_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1061,12 +1065,12 @@
               i++;
         });
         var i = 0;
-        layer_Dienstag_7.eachLayer(function(layer) {
+        layer_Antreten_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Dienstag_7'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1074,12 +1078,12 @@
               i++;
         });
         var i = 0;
-        layer_Montag_8.eachLayer(function(layer) {
+        layer_Antreten_6.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Montag_8'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_6'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1087,12 +1091,12 @@
               i++;
         });
         var i = 0;
-        layer_Sonntag_9.eachLayer(function(layer) {
+        layer_Antreten_8.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Sonntag_9'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_8'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1100,27 +1104,27 @@
               i++;
         });
         var i = 0;
-        layer_Samstag_10.eachLayer(function(layer) {
+        layer_Antreten_10.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Samstag_10'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_10'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Hptelenker_6,layer_Dienstag_7,layer_Montag_8,layer_Sonntag_9,layer_Samstag_10]);
+        resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
         map.on("zoomend", function(){
-            resetLabels([layer_Hptelenker_6,layer_Dienstag_7,layer_Montag_8,layer_Sonntag_9,layer_Samstag_10]);
+            resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Hptelenker_6,layer_Dienstag_7,layer_Montag_8,layer_Sonntag_9,layer_Samstag_10]);
+            resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Hptelenker_6,layer_Dienstag_7,layer_Montag_8,layer_Sonntag_9,layer_Samstag_10]);
+            resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
         });
         </script>
     </body>

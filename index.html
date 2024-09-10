@@ -72,7 +72,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[51.13957578143374,6.69210889559257],[51.183840003304475,6.803492611120902]]);
+        }).fitBounds([[51.1451000966169,6.712893179716559],[51.16723535994971,6.768581237490334]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -244,7 +244,7 @@
                 interactive: true,
             }
                     break;
-                case 'Hanni':
+                case 'Haufen':
                     return {
                 pane: 'pane_Hptelenker_2',
                 radius: 6.0,
@@ -260,7 +260,7 @@
                 interactive: true,
             }
                     break;
-                case 'Haufen':
+                case 'Horno':
                     return {
                 pane: 'pane_Hptelenker_2',
                 radius: 6.0,
@@ -276,7 +276,7 @@
                 interactive: true,
             }
                     break;
-                case 'Horno':
+                case 'Jan H.':
                     return {
                 pane: 'pane_Hptelenker_2',
                 radius: 6.0,
@@ -523,7 +523,8 @@
                         <td>' + (feature.properties['Tag'] !== null ? autolinker.link(feature.properties['Tag'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Ort"colspan="2"><strong>Ort</strong><br />' + (feature.properties['Ort'] !== null ? autolinker.link(feature.properties['Ort'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Ort</th>\
+                        <td class="visible-with-data" id="Ort">' + (feature.properties['Ort'] !== null ? autolinker.link(feature.properties['Ort'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Uhrzeit</th>\
@@ -884,11 +885,7 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -959,9 +956,6 @@
                     <tr>\
                         <th scope="row">Inhalt</th>\
                         <td>' + (feature.properties['Inhalt'] !== null ? autolinker.link(feature.properties['Inhalt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['T'] !== null ? autolinker.link(feature.properties['T'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1036,7 +1030,7 @@
         {label: '<b>Dienstag</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/Antreten_4.png" /> Antreten', layer: cluster_Antreten_4},
             {label: '<img src="legend/Marschweg_3.png" /> Marschweg', layer: layer_Marschweg_3},]},
-            {label: 'Höptelenker<br /><table><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Björn0.png" /></td><td>Björn</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Bömski1.png" /></td><td>Bömski</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Dirk2.png" /></td><td>Dirk</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Hanni3.png" /></td><td>Hanni</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Haufen4.png" /></td><td>Haufen</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Horno5.png" /></td><td>Horno</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Lexi6.png" /></td><td>Lexi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_N7.png" /></td><td>N.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Nobbi8.png" /></td><td>Nobbi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Püllemann9.png" /></td><td>Püllemann</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Rüdi10.png" /></td><td>Rüdi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schnubi11.png" /></td><td>Schnubi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schorsch12.png" /></td><td>Schorsch</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Timm13.png" /></td><td>Timm</td></tr></table>', layer: layer_Hptelenker_2},
+            {label: 'Höptelenker<br /><table><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Björn0.png" /></td><td>Björn</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Bömski1.png" /></td><td>Bömski</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Dirk2.png" /></td><td>Dirk</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Haufen3.png" /></td><td>Haufen</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Horno4.png" /></td><td>Horno</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_JanH5.png" /></td><td>Jan H.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Lexi6.png" /></td><td>Lexi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_N7.png" /></td><td>N.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Nobbi8.png" /></td><td>Nobbi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Püllemann9.png" /></td><td>Püllemann</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Rüdi10.png" /></td><td>Rüdi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schnubi11.png" /></td><td>Schnubi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schorsch12.png" /></td><td>Schorsch</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Timm13.png" /></td><td>Timm</td></tr></table>', layer: layer_Hptelenker_2},
             {label: "Hintergrund grau", layer: layer_Hintergrundgrau_1},
             {label: "Hintergrund farbig", layer: layer_Hintergrundfarbig_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{

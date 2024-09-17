@@ -44,15 +44,15 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/Hptelenker_2.js"></script>
-        <script src="data/Marschweg_3.js"></script>
-        <script src="data/Antreten_4.js"></script>
-        <script src="data/Marschweg_5.js"></script>
-        <script src="data/Antreten_6.js"></script>
-        <script src="data/Marschweg_7.js"></script>
-        <script src="data/Antreten_8.js"></script>
-        <script src="data/Marschweg_9.js"></script>
-        <script src="data/Antreten_10.js"></script>
+        <script src="data/Hptelenker_1.js"></script>
+        <script src="data/Marschweg_2.js"></script>
+        <script src="data/Antreten_3.js"></script>
+        <script src="data/Marschweg_4.js"></script>
+        <script src="data/Antreten_5.js"></script>
+        <script src="data/Marschweg_6.js"></script>
+        <script src="data/Antreten_7.js"></script>
+        <script src="data/Marschweg_8.js"></script>
+        <script src="data/Antreten_9.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -131,10 +131,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_Hintergrundfarbig_0');
-        map.getPane('pane_Hintergrundfarbig_0').style.zIndex = 400;
-        var layer_Hintergrundfarbig_0 = L.WMS.layer("https://sgx.geodatenzentrum.de/wms_topplus_open", "web", {
-            pane: 'pane_Hintergrundfarbig_0',
+        map.createPane('pane_Hintergrundgrau_0');
+        map.getPane('pane_Hintergrundgrau_0').style.zIndex = 400;
+        var layer_Hintergrundgrau_0 = L.WMS.layer("https://sgx.geodatenzentrum.de/wms_topplus_open", "web_grau", {
+            pane: 'pane_Hintergrundgrau_0',
             format: 'image/png',
             uppercase: true,
             transparent: true,
@@ -145,22 +145,8 @@
             identify: false,
             attribution: '',
         });
-        map.createPane('pane_Hintergrundgrau_1');
-        map.getPane('pane_Hintergrundgrau_1').style.zIndex = 401;
-        var layer_Hintergrundgrau_1 = L.WMS.layer("https://sgx.geodatenzentrum.de/wms_topplus_open", "web_grau", {
-            pane: 'pane_Hintergrundgrau_1',
-            format: 'image/png',
-            uppercase: true,
-            transparent: true,
-            continuousWorld : true,
-            tiled: true,
-            info_format: 'text/html',
-            opacity: 1,
-            identify: false,
-            attribution: '',
-        });
-        map.addLayer(layer_Hintergrundgrau_1);
-        function pop_Hptelenker_2(feature, layer) {
+        map.addLayer(layer_Hintergrundgrau_0);
+        function pop_Hptelenker_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -194,11 +180,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Hptelenker_2_0(feature) {
+        function style_Hptelenker_1_0(feature) {
             switch(String(feature.properties['Name'])) {
                 case 'Björn':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -214,7 +200,7 @@
                     break;
                 case 'Bömski':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -230,7 +216,7 @@
                     break;
                 case 'Dirk':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -246,7 +232,7 @@
                     break;
                 case 'Haufen':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -262,7 +248,7 @@
                     break;
                 case 'Horno':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -278,7 +264,7 @@
                     break;
                 case 'Jan H.':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -294,7 +280,7 @@
                     break;
                 case 'Lexi':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -310,7 +296,7 @@
                     break;
                 case 'N.':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -326,7 +312,7 @@
                     break;
                 case 'Nobbi':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -342,7 +328,7 @@
                     break;
                 case 'Püllemann':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -358,7 +344,7 @@
                     break;
                 case 'Rüdi':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -374,7 +360,7 @@
                     break;
                 case 'Schnubi':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -390,7 +376,7 @@
                     break;
                 case 'Schorsch':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -406,7 +392,7 @@
                     break;
                 case 'Timm':
                     return {
-                pane: 'pane_Hptelenker_2',
+                pane: 'pane_Hptelenker_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(128,17,25,1.0)',
@@ -422,27 +408,27 @@
                     break;
             }
         }
-        map.createPane('pane_Hptelenker_2');
-        map.getPane('pane_Hptelenker_2').style.zIndex = 402;
-        map.getPane('pane_Hptelenker_2').style['mix-blend-mode'] = 'normal';
-        var layer_Hptelenker_2 = new L.geoJson(json_Hptelenker_2, {
+        map.createPane('pane_Hptelenker_1');
+        map.getPane('pane_Hptelenker_1').style.zIndex = 401;
+        map.getPane('pane_Hptelenker_1').style['mix-blend-mode'] = 'normal';
+        var layer_Hptelenker_1 = new L.geoJson(json_Hptelenker_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Hptelenker_2',
-            layerName: 'layer_Hptelenker_2',
-            pane: 'pane_Hptelenker_2',
-            onEachFeature: pop_Hptelenker_2,
+            dataVar: 'json_Hptelenker_1',
+            layerName: 'layer_Hptelenker_1',
+            pane: 'pane_Hptelenker_1',
+            onEachFeature: pop_Hptelenker_1,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Hptelenker_2_0(feature));
+                return L.circleMarker(latlng, style_Hptelenker_1_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Hptelenker_2);
-        map.addLayer(layer_Hptelenker_2);
-        function pop_Marschweg_3(feature, layer) {
+        bounds_group.addLayer(layer_Hptelenker_1);
+        map.addLayer(layer_Hptelenker_1);
+        function pop_Marschweg_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -473,9 +459,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Marschweg_3_0() {
+        function style_Marschweg_2_0() {
             return {
-                pane: 'pane_Marschweg_3',
+                pane: 'pane_Marschweg_2',
                 opacity: 1,
                 color: 'rgba(238,229,55,1.0)',
                 dashArray: '',
@@ -486,20 +472,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Marschweg_3');
-        map.getPane('pane_Marschweg_3').style.zIndex = 403;
-        map.getPane('pane_Marschweg_3').style['mix-blend-mode'] = 'normal';
-        var layer_Marschweg_3 = new L.geoJson(json_Marschweg_3, {
+        map.createPane('pane_Marschweg_2');
+        map.getPane('pane_Marschweg_2').style.zIndex = 402;
+        map.getPane('pane_Marschweg_2').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_2 = new L.geoJson(json_Marschweg_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Marschweg_3',
-            layerName: 'layer_Marschweg_3',
-            pane: 'pane_Marschweg_3',
-            onEachFeature: pop_Marschweg_3,
-            style: style_Marschweg_3_0,
+            dataVar: 'json_Marschweg_2',
+            layerName: 'layer_Marschweg_2',
+            pane: 'pane_Marschweg_2',
+            onEachFeature: pop_Marschweg_2,
+            style: style_Marschweg_2_0,
         });
-        bounds_group.addLayer(layer_Marschweg_3);
-        function pop_Antreten_4(feature, layer) {
+        bounds_group.addLayer(layer_Marschweg_2);
+        map.addLayer(layer_Marschweg_2);
+        function pop_Antreten_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -542,9 +529,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Antreten_4_0() {
+        function style_Antreten_3_0() {
             return {
-                pane: 'pane_Antreten_4',
+                pane: 'pane_Antreten_3',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -559,30 +546,31 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Antreten_4');
-        map.getPane('pane_Antreten_4').style.zIndex = 404;
-        map.getPane('pane_Antreten_4').style['mix-blend-mode'] = 'normal';
-        var layer_Antreten_4 = new L.geoJson(json_Antreten_4, {
+        map.createPane('pane_Antreten_3');
+        map.getPane('pane_Antreten_3').style.zIndex = 403;
+        map.getPane('pane_Antreten_3').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_3 = new L.geoJson(json_Antreten_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Antreten_4',
-            layerName: 'layer_Antreten_4',
-            pane: 'pane_Antreten_4',
-            onEachFeature: pop_Antreten_4,
+            dataVar: 'json_Antreten_3',
+            layerName: 'layer_Antreten_3',
+            pane: 'pane_Antreten_3',
+            onEachFeature: pop_Antreten_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Antreten_4_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_3_0(feature));
             },
         });
-        var cluster_Antreten_4 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_3 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Antreten_4.addLayer(layer_Antreten_4);
+        cluster_Antreten_3.addLayer(layer_Antreten_3);
 
-        bounds_group.addLayer(layer_Antreten_4);
-        function pop_Marschweg_5(feature, layer) {
+        bounds_group.addLayer(layer_Antreten_3);
+        cluster_Antreten_3.addTo(map);
+        function pop_Marschweg_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -613,9 +601,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Marschweg_5_0() {
+        function style_Marschweg_4_0() {
             return {
-                pane: 'pane_Marschweg_5',
+                pane: 'pane_Marschweg_4',
                 opacity: 1,
                 color: 'rgba(193,27,37,1.0)',
                 dashArray: '',
@@ -626,20 +614,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Marschweg_5');
-        map.getPane('pane_Marschweg_5').style.zIndex = 405;
-        map.getPane('pane_Marschweg_5').style['mix-blend-mode'] = 'normal';
-        var layer_Marschweg_5 = new L.geoJson(json_Marschweg_5, {
+        map.createPane('pane_Marschweg_4');
+        map.getPane('pane_Marschweg_4').style.zIndex = 404;
+        map.getPane('pane_Marschweg_4').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_4 = new L.geoJson(json_Marschweg_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Marschweg_5',
-            layerName: 'layer_Marschweg_5',
-            pane: 'pane_Marschweg_5',
-            onEachFeature: pop_Marschweg_5,
-            style: style_Marschweg_5_0,
+            dataVar: 'json_Marschweg_4',
+            layerName: 'layer_Marschweg_4',
+            pane: 'pane_Marschweg_4',
+            onEachFeature: pop_Marschweg_4,
+            style: style_Marschweg_4_0,
         });
-        bounds_group.addLayer(layer_Marschweg_5);
-        function pop_Antreten_6(feature, layer) {
+        bounds_group.addLayer(layer_Marschweg_4);
+        function pop_Antreten_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -682,9 +670,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Antreten_6_0() {
+        function style_Antreten_5_0() {
             return {
-                pane: 'pane_Antreten_6',
+                pane: 'pane_Antreten_5',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -699,30 +687,30 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Antreten_6');
-        map.getPane('pane_Antreten_6').style.zIndex = 406;
-        map.getPane('pane_Antreten_6').style['mix-blend-mode'] = 'normal';
-        var layer_Antreten_6 = new L.geoJson(json_Antreten_6, {
+        map.createPane('pane_Antreten_5');
+        map.getPane('pane_Antreten_5').style.zIndex = 405;
+        map.getPane('pane_Antreten_5').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_5 = new L.geoJson(json_Antreten_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Antreten_6',
-            layerName: 'layer_Antreten_6',
-            pane: 'pane_Antreten_6',
-            onEachFeature: pop_Antreten_6,
+            dataVar: 'json_Antreten_5',
+            layerName: 'layer_Antreten_5',
+            pane: 'pane_Antreten_5',
+            onEachFeature: pop_Antreten_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Antreten_6_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_5_0(feature));
             },
         });
-        var cluster_Antreten_6 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_5 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Antreten_6.addLayer(layer_Antreten_6);
+        cluster_Antreten_5.addLayer(layer_Antreten_5);
 
-        bounds_group.addLayer(layer_Antreten_6);
-        function pop_Marschweg_7(feature, layer) {
+        bounds_group.addLayer(layer_Antreten_5);
+        function pop_Marschweg_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -756,9 +744,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Marschweg_7_0() {
+        function style_Marschweg_6_0() {
             return {
-                pane: 'pane_Marschweg_7',
+                pane: 'pane_Marschweg_6',
                 opacity: 1,
                 color: 'rgba(80,168,71,1.0)',
                 dashArray: '',
@@ -769,20 +757,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Marschweg_7');
-        map.getPane('pane_Marschweg_7').style.zIndex = 407;
-        map.getPane('pane_Marschweg_7').style['mix-blend-mode'] = 'normal';
-        var layer_Marschweg_7 = new L.geoJson(json_Marschweg_7, {
+        map.createPane('pane_Marschweg_6');
+        map.getPane('pane_Marschweg_6').style.zIndex = 406;
+        map.getPane('pane_Marschweg_6').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_6 = new L.geoJson(json_Marschweg_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Marschweg_7',
-            layerName: 'layer_Marschweg_7',
-            pane: 'pane_Marschweg_7',
-            onEachFeature: pop_Marschweg_7,
-            style: style_Marschweg_7_0,
+            dataVar: 'json_Marschweg_6',
+            layerName: 'layer_Marschweg_6',
+            pane: 'pane_Marschweg_6',
+            onEachFeature: pop_Marschweg_6,
+            style: style_Marschweg_6_0,
         });
-        bounds_group.addLayer(layer_Marschweg_7);
-        function pop_Antreten_8(feature, layer) {
+        bounds_group.addLayer(layer_Marschweg_6);
+        function pop_Antreten_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -825,9 +813,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Antreten_8_0() {
+        function style_Antreten_7_0() {
             return {
-                pane: 'pane_Antreten_8',
+                pane: 'pane_Antreten_7',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -842,30 +830,30 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Antreten_8');
-        map.getPane('pane_Antreten_8').style.zIndex = 408;
-        map.getPane('pane_Antreten_8').style['mix-blend-mode'] = 'normal';
-        var layer_Antreten_8 = new L.geoJson(json_Antreten_8, {
+        map.createPane('pane_Antreten_7');
+        map.getPane('pane_Antreten_7').style.zIndex = 407;
+        map.getPane('pane_Antreten_7').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_7 = new L.geoJson(json_Antreten_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Antreten_8',
-            layerName: 'layer_Antreten_8',
-            pane: 'pane_Antreten_8',
-            onEachFeature: pop_Antreten_8,
+            dataVar: 'json_Antreten_7',
+            layerName: 'layer_Antreten_7',
+            pane: 'pane_Antreten_7',
+            onEachFeature: pop_Antreten_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Antreten_8_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_7_0(feature));
             },
         });
-        var cluster_Antreten_8 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_7 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Antreten_8.addLayer(layer_Antreten_8);
+        cluster_Antreten_7.addLayer(layer_Antreten_7);
 
-        bounds_group.addLayer(layer_Antreten_8);
-        function pop_Marschweg_9(feature, layer) {
+        bounds_group.addLayer(layer_Antreten_7);
+        function pop_Marschweg_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -895,9 +883,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Marschweg_9_0() {
+        function style_Marschweg_8_0() {
             return {
-                pane: 'pane_Marschweg_9',
+                pane: 'pane_Marschweg_8',
                 opacity: 1,
                 color: 'rgba(72,123,182,1.0)',
                 dashArray: '',
@@ -908,21 +896,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Marschweg_9');
-        map.getPane('pane_Marschweg_9').style.zIndex = 409;
-        map.getPane('pane_Marschweg_9').style['mix-blend-mode'] = 'normal';
-        var layer_Marschweg_9 = new L.geoJson(json_Marschweg_9, {
+        map.createPane('pane_Marschweg_8');
+        map.getPane('pane_Marschweg_8').style.zIndex = 408;
+        map.getPane('pane_Marschweg_8').style['mix-blend-mode'] = 'normal';
+        var layer_Marschweg_8 = new L.geoJson(json_Marschweg_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Marschweg_9',
-            layerName: 'layer_Marschweg_9',
-            pane: 'pane_Marschweg_9',
-            onEachFeature: pop_Marschweg_9,
-            style: style_Marschweg_9_0,
+            dataVar: 'json_Marschweg_8',
+            layerName: 'layer_Marschweg_8',
+            pane: 'pane_Marschweg_8',
+            onEachFeature: pop_Marschweg_8,
+            style: style_Marschweg_8_0,
         });
-        bounds_group.addLayer(layer_Marschweg_9);
-        map.addLayer(layer_Marschweg_9);
-        function pop_Antreten_10(feature, layer) {
+        bounds_group.addLayer(layer_Marschweg_8);
+        function pop_Antreten_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -965,9 +952,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Antreten_10_0() {
+        function style_Antreten_9_0() {
             return {
-                pane: 'pane_Antreten_10',
+                pane: 'pane_Antreten_9',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -982,30 +969,29 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Antreten_10');
-        map.getPane('pane_Antreten_10').style.zIndex = 410;
-        map.getPane('pane_Antreten_10').style['mix-blend-mode'] = 'normal';
-        var layer_Antreten_10 = new L.geoJson(json_Antreten_10, {
+        map.createPane('pane_Antreten_9');
+        map.getPane('pane_Antreten_9').style.zIndex = 409;
+        map.getPane('pane_Antreten_9').style['mix-blend-mode'] = 'normal';
+        var layer_Antreten_9 = new L.geoJson(json_Antreten_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Antreten_10',
-            layerName: 'layer_Antreten_10',
-            pane: 'pane_Antreten_10',
-            onEachFeature: pop_Antreten_10,
+            dataVar: 'json_Antreten_9',
+            layerName: 'layer_Antreten_9',
+            pane: 'pane_Antreten_9',
+            onEachFeature: pop_Antreten_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Antreten_10_0(feature));
+                return L.shapeMarker(latlng, style_Antreten_9_0(feature));
             },
         });
-        var cluster_Antreten_10 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_Antreten_9 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Antreten_10.addLayer(layer_Antreten_10);
+        cluster_Antreten_9.addLayer(layer_Antreten_9);
 
-        bounds_group.addLayer(layer_Antreten_10);
-        cluster_Antreten_10.addTo(map);
+        bounds_group.addLayer(layer_Antreten_9);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1019,20 +1005,19 @@
         var baseMaps = {};
         var overlaysTree = [
         {label: '<b>Samstag</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Antreten_10.png" /> Antreten', layer: cluster_Antreten_10},
-            {label: '<img src="legend/Marschweg_9.png" /> Marschweg', layer: layer_Marschweg_9},]},
+            {label: '<img src="legend/Antreten_9.png" /> Antreten', layer: cluster_Antreten_9},
+            {label: '<img src="legend/Marschweg_8.png" /> Marschweg', layer: layer_Marschweg_8},]},
         {label: '<b>Sonntag</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Antreten_8.png" /> Antreten', layer: cluster_Antreten_8},
-            {label: '<img src="legend/Marschweg_7.png" /> Marschweg', layer: layer_Marschweg_7},]},
+            {label: '<img src="legend/Antreten_7.png" /> Antreten', layer: cluster_Antreten_7},
+            {label: '<img src="legend/Marschweg_6.png" /> Marschweg', layer: layer_Marschweg_6},]},
         {label: '<b>Montag</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Antreten_6.png" /> Antreten', layer: cluster_Antreten_6},
-            {label: '<img src="legend/Marschweg_5.png" /> Marschweg', layer: layer_Marschweg_5},]},
+            {label: '<img src="legend/Antreten_5.png" /> Antreten', layer: cluster_Antreten_5},
+            {label: '<img src="legend/Marschweg_4.png" /> Marschweg', layer: layer_Marschweg_4},]},
         {label: '<b>Dienstag</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Antreten_4.png" /> Antreten', layer: cluster_Antreten_4},
-            {label: '<img src="legend/Marschweg_3.png" /> Marschweg', layer: layer_Marschweg_3},]},
-            {label: 'Höptelenker<br /><table><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Björn0.png" /></td><td>Björn</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Bömski1.png" /></td><td>Bömski</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Dirk2.png" /></td><td>Dirk</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Haufen3.png" /></td><td>Haufen</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Horno4.png" /></td><td>Horno</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_JanH5.png" /></td><td>Jan H.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Lexi6.png" /></td><td>Lexi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_N7.png" /></td><td>N.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Nobbi8.png" /></td><td>Nobbi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Püllemann9.png" /></td><td>Püllemann</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Rüdi10.png" /></td><td>Rüdi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schnubi11.png" /></td><td>Schnubi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Schorsch12.png" /></td><td>Schorsch</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_2_Timm13.png" /></td><td>Timm</td></tr></table>', layer: layer_Hptelenker_2},
-            {label: "Hintergrund grau", layer: layer_Hintergrundgrau_1},
-            {label: "Hintergrund farbig", layer: layer_Hintergrundfarbig_0},]
+            {label: '<img src="legend/Antreten_3.png" /> Antreten', layer: cluster_Antreten_3},
+            {label: '<img src="legend/Marschweg_2.png" /> Marschweg', layer: layer_Marschweg_2},]},
+            {label: 'Höptelenker<br /><table><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Björn0.png" /></td><td>Björn</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Bömski1.png" /></td><td>Bömski</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Dirk2.png" /></td><td>Dirk</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Haufen3.png" /></td><td>Haufen</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Horno4.png" /></td><td>Horno</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_JanH5.png" /></td><td>Jan H.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Lexi6.png" /></td><td>Lexi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_N7.png" /></td><td>N.</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Nobbi8.png" /></td><td>Nobbi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Püllemann9.png" /></td><td>Püllemann</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Rüdi10.png" /></td><td>Rüdi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Schnubi11.png" /></td><td>Schnubi</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Schorsch12.png" /></td><td>Schorsch</td></tr><tr><td style="text-align: center;"><img src="legend/Hptelenker_1_Timm13.png" /></td><td>Timm</td></tr></table>', layer: layer_Hptelenker_1},
+            {label: "Hintergrund grau", layer: layer_Hintergrundgrau_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -1045,12 +1030,12 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_Hptelenker_2.eachLayer(function(layer) {
+        layer_Hptelenker_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Hptelenker_2'});
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Hptelenker_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1058,12 +1043,12 @@
               i++;
         });
         var i = 0;
-        layer_Antreten_4.eachLayer(function(layer) {
+        layer_Antreten_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_4'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1071,12 +1056,12 @@
               i++;
         });
         var i = 0;
-        layer_Antreten_6.eachLayer(function(layer) {
+        layer_Antreten_5.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_6'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1084,12 +1069,12 @@
               i++;
         });
         var i = 0;
-        layer_Antreten_8.eachLayer(function(layer) {
+        layer_Antreten_7.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_8'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_7'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1097,27 +1082,27 @@
               i++;
         });
         var i = 0;
-        layer_Antreten_10.eachLayer(function(layer) {
+        layer_Antreten_9.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_10'});
+            layer.bindTooltip((layer.feature.properties['Tag'] !== null?String('<div style="color: #000000; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Tag']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Antreten_9'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
+        resetLabels([layer_Hptelenker_1,layer_Antreten_3,layer_Antreten_5,layer_Antreten_7,layer_Antreten_9]);
         map.on("zoomend", function(){
-            resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
+            resetLabels([layer_Hptelenker_1,layer_Antreten_3,layer_Antreten_5,layer_Antreten_7,layer_Antreten_9]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
+            resetLabels([layer_Hptelenker_1,layer_Antreten_3,layer_Antreten_5,layer_Antreten_7,layer_Antreten_9]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Hptelenker_2,layer_Antreten_4,layer_Antreten_6,layer_Antreten_8,layer_Antreten_10]);
+            resetLabels([layer_Hptelenker_1,layer_Antreten_3,layer_Antreten_5,layer_Antreten_7,layer_Antreten_9]);
         });
         </script>
     </body>
